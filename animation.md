@@ -29,14 +29,14 @@ const BezierEasing = require('bezier-easing')
 
 const easing = BezierEasing(0, 0, 1, 0.5)
 
-let duration = 2000, deltaTime = 20, start = 100, end = 1000
+let duration = 2000, deltaTime = 1000 / 60, start = 100, end = 1000
 
 let current
 let startTime = Date.now()
 let timer = setInterval(() => {
-    let deltaTime = Math.min(Date.now() - startTime, duration)
-    current = (end - start) * easing(deltaTime / duration) + start
-    deltaTime === duration && clearInterval(timer)
+    let currDuration = Math.min(Date.now() - startTime, duration)
+    current = (end - start) * easing(currDuration / duration) + start
+    currDuration === duration && clearInterval(timer)
     console.log('current', current)
 }, deltaTime)
 ```
