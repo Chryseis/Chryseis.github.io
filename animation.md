@@ -80,7 +80,7 @@ let timer = setInterval(() => {
 会发现每个阶段都是重新执行一次bezier，也就是说0-20%，20%-40%，40%-60%，60%-80%，80%-100%改变率都是先快后慢
 
 <video id="video" autoplay preload="none" loop style="width:500px;margin-top:20px" >
-<source id="mp4" src="http://static.chryseis.cn/animation2.mov" type="video/mp4">
+<source src="http://static.chryseis.cn/animation2.mov">
 </video>
 
 ## 未完待续
