@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Animation
-permalink: /animation/
 ---
 ## 动画实现
 ### CSS动画过度的实现
