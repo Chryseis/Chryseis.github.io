@@ -52,35 +52,32 @@ let timer = setInterval(() => {
 ### Animation中keyFrames
 如果我们定义一个keyFrames
 ``` css
-	@keyframes scale {
-	  0% {
-	    transform: scale(.5);
-	  }
-	  20% {
-	    transform: scale(1);
-	  }
-	  40% {
-	    transform: scale(1.5);
-	  }
-	  60% {
-	    transform: scale(2);
-	  }
-	  80% {
-	    transform: scale(1.5);
-	  }
-	  100% {
-	    transform: scale(1);
-	  }
-	}
+@keyframes scale {
+  0% {
+    transform: scale(.5);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.5);
+  }
+  60% {
+    transform: scale(2);
+  }
+  80% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 ```
 然后在css中使用这个样式
 ```
-	animation: scale 5s cubic-bezier(0.060, 0.895, 0.060, 1.650) infinite;
+animation: scale 5s cubic-bezier(0.060, 0.895, 0.060, 1.650) infinite;
 ```
 会发现每个阶段都是重新执行一次bezier，也就是说0-20%，20%-40%，40%-60%，60%-80%，80%-100%改变率都是先快后慢
-
-<video id="video" autoplay preload="none" loop style="width:500px;margin-top:20px" >
-<source src="http://static.chryseis.cn/animation2.mov">
-</video>
+![animation](http://static.chryseis.cn/animation.gif)
 
 ## 未完待续
