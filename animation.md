@@ -90,7 +90,7 @@ animation: scale 5s cubic-bezier(0.060, 0.895, 0.060, 1.650) infinite;
 
 ### 例子
 
-```ecmascript 6
+```
 import React from 'react'
 import BezierEasing from 'bezier-easing'
 
