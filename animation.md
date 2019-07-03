@@ -35,7 +35,7 @@ title: Animation
 
 此时我们借助bezier曲线函数便可以通过代码来表示这个值变化，即为
 
-```javascript
+```Jsx
 const BezierEasing = require('bezier-easing')
 
 const easing = BezierEasing(0, 0, 1, 0.5)
