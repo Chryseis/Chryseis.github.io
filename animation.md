@@ -4,8 +4,7 @@ title: Animation
 ---
 ## 动画实现
 ### CSS动画过度的实现
-我们在使用css动画时，一般会设置一个开始值，一个结束值，一个时间段和一个缓动的[贝塞尔曲线]
-(https://baike.baidu.com/item/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/1091769?fr=aladdin)
+我们在使用css动画时，一般会设置一个开始值，一个结束值，一个时间段和一个缓动的[贝塞尔曲线](https://baike.baidu.com/item/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/1091769?fr=aladdin)
 
 ```css
 	.box{
