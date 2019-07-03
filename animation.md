@@ -4,8 +4,8 @@ title: Animation
 ---
 ## 动画实现
 ### CSS动画过度的实现
-我们在使用css动画时，一般会设置一个开始值，一个结束值，一个时间段和一个缓动的
-[贝塞尔曲线](https://baike.baidu.com/item/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/1091769?fr=aladdin)
+我们在使用css动画时，一般会设置一个开始值，一个结束值，一个时间段和一个缓动的[贝塞尔曲线]
+(https://baike.baidu.com/item/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/1091769?fr=aladdin)
 
 ```css
 	.box{
@@ -35,7 +35,7 @@ title: Animation
 
 此时我们借助bezier曲线函数便可以通过代码来表示这个值变化，即为
 
-```ecmascript 6
+```javascript
 const BezierEasing = require('bezier-easing')
 
 const easing = BezierEasing(0, 0, 1, 0.5)
@@ -90,7 +90,7 @@ animation: scale 5s cubic-bezier(0.060, 0.895, 0.060, 1.650) infinite;
 
 ### 例子
 
-```
+```Jsx
 import React from 'react'
 import BezierEasing from 'bezier-easing'
 
