@@ -35,7 +35,7 @@ title: Animation
 
 此时我们借助bezier曲线函数便可以通过代码来表示这个值变化，即为
 
-``Jsx
+```javascript
 const BezierEasing = require('bezier-easing')
 
 const easing = BezierEasing(0, 0, 1, 0.5)
@@ -118,13 +118,12 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        let animation = this.nextTick(Date.now())
-        animation('width1', 0, 500, duration, ease)
-        animation('width2', 0, 500, duration, easein)
-        animation('width3', 0, 500, duration, easeout)
+        this.nextTick(Date.now(), 'width1', 0, 500, duration, ease)
+        this.nextTick(Date.now(), 'width2', 0, 500, duration, easein)
+        this.nextTick(Date.now(), 'width3', 0, 500, duration, easeout)
     }
 
-    nextTick = (startTime) => (property, start, end, duration, fn) => {
+    nextTick = (startTime, property, start, end, duration, fn) => {
         let currDuration = Math.min(Date.now() - startTime, duration)
         this.setState({
             [property]: (end - start) * fn(currDuration / duration) + start
