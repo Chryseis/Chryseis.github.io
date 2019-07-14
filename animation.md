@@ -4,12 +4,11 @@ title: Animation
 ---
 ## 动画实现
 ### CSS动画过度的实现
-我们在使用css动画时，一般会设置一个开始值，一个结束值，一个时间段和一个缓动的
-[贝塞尔曲线](https://baike.baidu.com/item/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/1091769?fr=aladdin)
+我们在使用css动画时，一般会设置一个开始值，一个结束值，一个时间段和一个缓动的[贝塞尔曲线](https://baike.baidu.com/item/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/1091769?fr=aladdin)
 
 ```css
 	.box{
-		width:100px;
+		width:100px;a
 		&.animation{
 			width:500px;
 			transition: width 5s easein
@@ -31,7 +30,7 @@ title: Animation
 如图在css中bezier是一个关于时间和进度的函数
 横坐标范围(0,1)，纵坐标范围(0,1)
 
-即 ```p=f(t)```,由此可知，若已知贝塞尔曲线，便可知函数中每个时刻所对应的进度
+即 ```f(p)=t```,由此可知，若已知贝塞尔曲线，便可知函数中每个时刻所对应的进度
 
 此时我们借助bezier曲线函数便可以通过代码来表示这个值变化，即为
 
@@ -153,4 +152,46 @@ class App extends React.Component {
 由于采用javascript模拟css的动画实现，故会发现动画的时间可能并不是那么精确，但可以发现基本上是同时到达的
 
 
-## 未完待续
+### Javascript 动画
+
+javascript动画的实现分为两种
+
++ 基于时间
++ 基于变化率
+
+#### 时间动画
+
+时间动画便是上文中用js模拟css的动画的原理，
+整个动画的在执行之初便已设定完成，我们只需改变bezier函数便可以获得各式各样的动画效果。在此不多做叙述。
+
+#### 变化率的动画
+
+关于变化率的动画，对比时间动画，我们只关心**开始量** ，**结束量**和每个时刻的**变化量**，不关心**时间**
+
+例如 一辆汽车启驶速度为10，我们要把速度变为100，速度改变率为10，
+那么上一刻速度和下一刻的速度关系即为 ```v1=at+v0```，t是我们做动画的间隔时间，由此，我们做动画只需要一直累加，直到速度到100时，动画停止便可以。
+
+用代码的表示
+
+```javascript
+let start = 10, end = 100, a = 10, deltaTime = 1000 / 60
+let current = start
+let timer = setInterval(() => {
+    current = current + a
+    current === end && clearInterval(timer)
+    console.log(current)
+}, deltaTime)
+
+```
+结果为![example](http://static.chryseis.cn/js_example.jpg)
+
+到这里js动画的原理已经完了，各式各样的动画无非是改变变化率，产生不同的效果。但是我们会发现一个问题，如果每次方法的**执行时间**大于动画的**间隔时间**怎么办？
+
+**说明： 执行时间为浏览器执行下面代码
+	() => {
+	    current = current + a
+	    current === end && clearInterval(timer)
+	    console.log(current)
+	   }的时间； 间隔时间=deltaTime;**
+
+由于**执行时间**取决于浏览器本身，而**间隔时间**一般我们都会默认为1000/60=16.7ms,1秒60桢，当**执行时间**大于**间隔时间**时，实际间隔时间即为**执行时间**，动画不可避免的就会出现卡顿，也就是我们经常说的动画不流畅，外加javascript的单线程原因，我们执行动画时，不能避免别的逻辑的执行，因此对于这个问题的解决，我们需要做一些特殊处理
