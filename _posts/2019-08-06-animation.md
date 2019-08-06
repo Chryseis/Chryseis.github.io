@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: CSS和JS动画是如何实现的？
 ---
 ## 动画实现
