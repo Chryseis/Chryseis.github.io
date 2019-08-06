@@ -51,3 +51,20 @@ $on-laptop: 800px !default;
 .site-header {
   border-top: none;
 }
+
+.site-nav{
+  position: relative;
+}
+
+.icon--github{
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-46%);
+  @media screen and (max-width: 600px){
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
