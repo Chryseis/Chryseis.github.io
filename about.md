@@ -2,16 +2,6 @@
 layout: page
 title: About Me
 ---
+人还是应该有梦想，我现在的梦想很实际，我希望在音乐的圈子里，每一步踏得更实在，把每件事做到更接近完美，这是我积极想做的，我也会朝这方面努力。我的未来，也有梦，不多，但都有实现的可能。 ---张雨生
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+我并不擅长说，这个缺点可能一时半会改不了了，只能把自己的知道一些东西记录下来，给今后的自己一个回忆。
