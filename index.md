@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 目录
+title: 我知道我没有什么不同的，只是你们给我的爱太深太浓
 ---
 <ul>
   {% for post in site.posts %}
