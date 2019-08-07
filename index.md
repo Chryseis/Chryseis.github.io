@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 我知道我没有什么不同的，只是你们给我的爱太深太浓
+title: 留下一点点痕迹
 ---
 <ul>
   {% for post in site.posts %}
